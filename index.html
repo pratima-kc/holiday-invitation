@@ -24,22 +24,38 @@
             color: #fff;
             overflow-x: hidden;
         }
-        
+   
+    
         /* Snowflakes Animation */
         .snowflake {
-            position: fixed;
-            top: -10px;
-            z-index: 1;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1em;
-            animation: fall linear infinite;
-        }
-        
-        @keyframes fall {
-            to {
-                transform: translateY(100vh);
-            }
-        }
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    pointer-events: none;
+
+    /* Visible on dark backgrounds */
+    color: #ffffff;
+    opacity: 0.95;
+
+    /* Glow effect for stronger visibility */
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.9))
+            drop-shadow(0 0 4px rgba(160,210,255,0.9));
+
+    /* Romantic motion */
+    animation: fallRomantic linear infinite,
+               swayRomantic ease-in-out infinite;
+}
+
+@keyframes fallRomantic {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(110vh); }
+}
+
+@keyframes swayRomantic {
+    0%,100% { margin-left: 0px; }
+    50% { margin-left: 25px; }
+}
+
         
         .container {
             max-width: 600px;
@@ -49,14 +65,15 @@
         }
         
         .card {
-    background: rgba(0, 0, 0, 0.45); /* darker & transparent */
-    border-radius: 30px;
-    padding: 40px 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.95);
+    border-radius: 0 0 30px 30px; /* only bottom corners rounded */
+    padding: 30px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
     animation: fadeIn 0.8s ease-out;
-}
+    
+        }
 
         
         @keyframes fadeIn {
@@ -103,20 +120,20 @@
         
         .subtitle {
             font-size: 18px;
-            color: #2d5a3d;
+            color: #338a51;
             font-weight: 300;
             letter-spacing: 1px;
         }
         
         /* Countdown Timer */
         .countdown-section {
-            text-align: center;
-            margin: 40px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b1a2e 100%);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
-        }
+    text-align: center;
+    margin: 0; /* remove extra margin so it sits flush with card */
+    padding: 30px;
+    background: linear-gradient(135deg, #c41e3a 0%, #8b1a2e 100%);
+    border-radius: 30px 30px 0 0; /* top corners rounded, bottom flat */
+    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+}
         
         .countdown-title {
             font-size: 20px;
@@ -148,7 +165,7 @@
             font-size: 42px;
             font-weight: 700;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 0 8px #ffd700, 0 0 12px #ffec70;
             display: block;
             line-height: 1;
         }
@@ -247,7 +264,7 @@
         }
         
         .birthday-card {
-            background: white;
+            background: pink;
             padding: 25px 20px;
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
@@ -262,7 +279,7 @@
         
         .host-birthday {
             border: 3px solid #ffd700;
-            background: linear-gradient(135deg, #fffacd 0%, #fff8dc 100%);
+            background: linear-gradient(135deg, #fceded 0%, #fff8dc 100%);
         }
         
         .birthday-icon {
@@ -593,8 +610,8 @@
         /* Music Player at Top */
         .music-player-top {
             text-align: center;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.15);
+            padding: 5px 20px;
+            background: none;
             border-radius: 15px;
             margin: 20px 0;
             backdrop-filter: blur(10px);
@@ -666,20 +683,27 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <div class="header">
-                <div class="emoji-row">🎄 ✨ 🎁 ✨ 🎄</div>
-                <h1>Dear Patils,<br>Join Our Holiday<br>Celebration!</h1>
-                <p class="subtitle">December 25th - January 1st</p>
-            </div>
-            
-            <!-- Music Player -->
-            <div class="music-player-top">
-                <button id="musicToggle" class="music-button-top" onclick="toggleMusic()">
-                    <span id="musicIcon">🎶</span>
-                    <span id="musicText">Music Playing</span>
-                </button>
-            </div>
+        <!-- Header & Music Player remain outside card -->
+    <div class="header">
+    <div class="emoji-row">🎄 ✨ 🎁 ✨ 🎄</div>
+    <h1>
+        <span class="glow-text">Dear Patils,</span><br>
+        Join Our Holiday<br>
+        Celebration!
+    </h1>
+    <p class="subtitle"><span class="animated-subtitle">December 25th - January 1st</span></p>
+</div>
+
+    
+    <div class="music-player-top">
+        <button id="musicToggle" class="music-button-top" onclick="toggleMusic()">
+            <span id="musicIcon">🎶</span>
+            <span id="musicText">Music Playing</span>
+        </button>
+    </div>
+
+    <!-- Card starts here -->
+    <div class="card">
             
             <div class="countdown-section">
                 <div class="countdown-title">⏰ Countdown to the Fun!</div>
@@ -744,7 +768,7 @@
                 <h3>🎂 Special Birthday Celebrations! 🎂</h3>
                 <div class="birthday-grid">
                     <div class="birthday-card">
-                        <div class="birthday-icon">🎉</div>
+                        <div class="birthday-icon">🍷</div>
                         <div class="birthday-name">Shaina's Birthday</div>
                         <div class="birthday-date">December 26th</div>
                         <div class="birthday-message">Let's make her day extra special!</div>
@@ -794,7 +818,6 @@
                     <li>Comfortable clothes for lounging</li>
                     <li>Something festive for dinners</li>
                     <li>Your favorite games or activities</li>
-                    <li>Camera for memories!</li>
                     <li>Any special snacks or drinks you love</li>
                     <li>Your amazing energy and smiles! 😊</li>
                 </ul>
@@ -865,7 +888,7 @@
             </div>
             
             <audio id="backgroundMusic" loop autoplay>
-                <source src="https://www.bensound.com/bensound-music/bensound-christmasmagic.mp3" type="audio/mpeg">
+                <source src="https://github.com/pratima-kc/holiday-invitation/blob/main/christmas-holiday.mp3" type="audio/mpeg">
             </audio>
         </div>
     </div>
@@ -873,12 +896,13 @@
     <script>
         // Create snowflakes
         function createSnowflakes() {
-            const snowflakeCount = 20;
+            const snowflakeCount = 60;
             for (let i = 0; i < snowflakeCount; i++) {
                 const snowflake = document.createElement('div');
                 snowflake.classList.add('snowflake');
                 snowflake.innerHTML = '❄';
                 snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.top = (Math.random() * -50) + 'px';
                 snowflake.style.animationDuration = (Math.random() * 3 + 7) + 's';
                 snowflake.style.animationDelay = Math.random() * 5 + 's';
                 snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
