@@ -49,14 +49,15 @@
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 40px 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            animation: fadeIn 0.8s ease-out;
-        }
+    background: rgba(0, 0, 0, 0.45); /* darker & transparent */
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    backdrop-filter: blur(12px);
+    animation: fadeIn 0.8s ease-out;
+}
+
         
         @keyframes fadeIn {
             from {
@@ -890,34 +891,29 @@
         
         // Countdown Timer
         function updateCountdown() {
-            // Set the date we're counting down to (December 25, 2025 at 2:00 PM)
-            const countDownDate = new Date("Dec 25, 2025 14:00:00").getTime();
-            
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-            
-            // Time calculations
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Display the result
-            document.getElementById("days").innerHTML = String(days).padStart(2, '0');
-            document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
-            
-            // If the count down is finished
-            if (distance < 0) {
-                document.getElementById("countdown").style.display = "none";
-                document.getElementById("celebrationMessage").style.display = "block";
-            }
-        }
-        
-        // Update countdown every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+    const countDownDate = new Date("Dec 25, 2025 14:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+    document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+
+    if (distance < 0) {
+        document.getElementById("countdown").style.display = "none";
+        document.getElementById("celebrationMessage").style.display = "block";
+    }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000); // update every second
+
         
         // Music Toggle Function with Auto-play
         let musicPlaying = false;
