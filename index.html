@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Countdown - We Can't Wait!</title>
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:title" content="Our Holiday Celebration Countdown! 🎄">
-    <meta property="og:description" content="Join us for an amazing week-long celebration!">
+    <meta property="og:description" content="Join us for an amazing week-long celebration from December 25th to January 1st!">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://raw.githubusercontent.com/pratima-kc/holiday-invitation/main/thumbnail.png">
+    <meta property="og:image" content="https://pratima-kc.github.io/holiday-invitation/thumbnail.png">
+    <meta property="og:image:secure_url" content="https://pratima-kc.github.io/holiday-invitation/thumbnail.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Holiday Celebration Invitation">
     <meta property="og:url" content="https://pratima-kc.github.io/holiday-invitation/">
+    <meta property="og:site_name" content="Holiday Celebration">
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Holiday Celebration Countdown! 🎄">
-    <meta name="twitter:description" content="Join us for an amazing week-long celebration!">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/pratima-kc/holiday-invitation/main/thumbnail.png">
+    <meta name="twitter:description" content="Join us for an amazing week-long celebration from December 25th to January 1st!">
+    <meta name="twitter:image" content="https://pratima-kc.github.io/holiday-invitation/thumbnail.png">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
         
@@ -1171,7 +1180,7 @@ setInterval(updateCountdown, 1000); // update every second
             if (navigator.share) {
                 navigator.share({
                     title: 'Holiday Celebration Countdown! 🎄',
-                    text: 'Join us for an amazing week-long holiday celebration!',
+                    text: 'Join us for an amazing week-long celebration!',
                     url: window.location.href
                 }).catch(err => console.log('Error sharing:', err));
             } else {
