@@ -666,17 +666,77 @@
                 font-size: 32px;
             }
             
-            .countdown-number {
-                font-size: 32px;
+            .countdown-section {
+                padding: 20px 10px;
+            }
+            
+            .countdown-title {
+                font-size: 16px;
+                margin-bottom: 15px;
+                letter-spacing: 1px;
+            }
+            
+            .countdown {
+                gap: 8px;
+                justify-content: center;
             }
             
             .countdown-item {
-                min-width: 60px;
-                padding: 15px 8px;
+                flex: 0 1 auto;
+                min-width: 65px;
+                max-width: 70px;
+                padding: 12px 6px;
+            }
+            
+            .countdown-number {
+                font-size: 28px;
+            }
+            
+            .countdown-label {
+                font-size: 10px;
+                margin-top: 5px;
+                letter-spacing: 0.5px;
             }
             
             .card {
-                padding: 30px 20px;
+                padding: 25px 15px;
+            }
+            
+            .detail-item {
+                padding: 12px;
+            }
+            
+            .detail-icon {
+                font-size: 24px;
+                margin-right: 12px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .countdown-section {
+                padding: 15px 8px;
+            }
+            
+            .countdown-title {
+                font-size: 14px;
+            }
+            
+            .countdown {
+                gap: 6px;
+            }
+            
+            .countdown-item {
+                min-width: 58px;
+                max-width: 62px;
+                padding: 10px 4px;
+            }
+            
+            .countdown-number {
+                font-size: 24px;
+            }
+            
+            .countdown-label {
+                font-size: 9px;
             }
         }
     </style>
@@ -889,8 +949,8 @@
                 <strong>Get ready for a week of fun, laughter, and unforgettable memories!</strong>
             </div>
             
-            <audio id="backgroundMusic" loop autoplay>
-                <source src="https://github.com/pratima-kc/holiday-invitation/blob/main/christmas-holiday.mp3" type="audio/mpeg">
+            <audio id="backgroundMusic" loop>
+                <source src="https://raw.githubusercontent.com/pratima-kc/holiday-invitation/main/christmas-holiday.mp3" type="audio/mpeg">
             </audio>
         </div>
     </div>
