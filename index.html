@@ -107,6 +107,17 @@
             }
         }
         
+        @keyframes subtlePulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.02);
+                opacity: 0.95;
+            }
+        }
+        
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 42px;
@@ -116,6 +127,14 @@
             background-clip: text;
             margin-bottom: 10px;
             line-height: 1.2;
+            animation: subtlePulse 3s ease-in-out infinite;
+        }
+        
+        .glow-text {
+            background: #338a51;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .subtitle {
@@ -747,7 +766,7 @@
     <div class="header">
     <div class="emoji-row">🎄 ✨ 🎁 ✨ 🎄</div>
     <h1>
-        <span class="glow-text">Dear Patils,</span><br>
+        Dear <span class="glow-text">Patils</span>,<br>
         Join Our Holiday<br>
         Celebration!
     </h1>
@@ -796,7 +815,7 @@
                 <div class="detail-item">
                     <div class="detail-icon">🏠</div>
                     <div class="detail-content">
-                        <div class="detail-label">Akshay & Pratima's Vrundavan</div>
+                        <div class="detail-label">Our Home</div>
                         <div class="detail-text">1714 Manderley Dr, Katy, Tx 77493</div>
                     </div>
                 </div>
@@ -958,7 +977,7 @@
     <script>
         // Create snowflakes
         function createSnowflakes() {
-            const snowflakeCount = 5;
+            const snowflakeCount = 30;
             for (let i = 0; i < snowflakeCount; i++) {
                 const snowflake = document.createElement('div');
                 snowflake.classList.add('snowflake');
