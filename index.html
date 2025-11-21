@@ -589,6 +589,59 @@
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
         }
         
+        /* Music Player at Top */
+        .music-player-top {
+            text-align: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .music-button-top {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a472a;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .music-button-top:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .music-button-top:active {
+            transform: scale(0.98);
+        }
+        
+        #musicIcon {
+            font-size: 18px;
+        }
+        
+        .music-button-top.playing #musicIcon {
+            animation: musicSpin 2s linear infinite;
+        }
+        
+        @keyframes musicSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 480px) {
             h1 {
@@ -619,6 +672,14 @@
                 <p class="subtitle">December 25th - January 1st</p>
             </div>
             
+            <!-- Music Player -->
+            <div class="music-player-top">
+                <button id="musicToggle" class="music-button-top" onclick="toggleMusic()">
+                    <span id="musicIcon">🎶</span>
+                    <span id="musicText">Music Playing</span>
+                </button>
+            </div>
+            
             <div class="countdown-section">
                 <div class="countdown-title">⏰ Countdown to the Fun!</div>
                 <div class="countdown" id="countdown">
@@ -634,10 +695,7 @@
                         <span class="countdown-number" id="minutes">00</span>
                         <span class="countdown-label">Minutes</span>
                     </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">Seconds</span>
-                    </div>
+                    
                 </div>
                 <div class="celebration-message" id="celebrationMessage">
                     🎉 IT'S TIME! Welcome to our home! 🎉
@@ -665,7 +723,7 @@
                     <div class="detail-icon">🎒</div>
                     <div class="detail-content">
                         <div class="detail-label">Departure</div>
-                        <div class="detail-text">Wednesday, January 1st</div>
+                        <div class="detail-text">Wednesday, January 1st • 🥺</div>
                     </div>
                 </div>
                 
@@ -769,8 +827,8 @@
             
             <!-- WhatsApp Group Section -->
             <div class="whatsapp-section">
-                <h3>💬 Join Our Family Group Chat!</h3>
-                <p class="whatsapp-subtitle">Connect with us on WhatsApp to share updates, coordinate plans, and build excitement!</p>
+                <h3>💬 Let's Stay Connected!</h3>
+                <p class="whatsapp-subtitle">Have questions or want to share your excitement? Reach out to us on WhatsApp!</p>
                 
                 <div class="whatsapp-benefits">
                     <div class="benefit-item">
@@ -785,13 +843,9 @@
                         <span class="benefit-emoji">🎉</span>
                         <span>Build excitement together</span>
                     </div>
-                    <div class="benefit-item">
-                        <span class="benefit-emoji">❓</span>
-                        <span>Ask any questions</span>
-                    </div>
                 </div>
                 
-               <a href="whatsapp://send" class="whatsapp-button">
+                <a href="whatsapp://send" class="whatsapp-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="margin-right: 10px;">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
@@ -805,6 +859,10 @@
                 We're beyond excited to host you in our new home!<br>
                 <strong>Get ready for a week of fun, laughter, and unforgettable memories!</strong>
             </div>
+            
+            <audio id="backgroundMusic" loop autoplay>
+                <source src="https://www.bensound.com/bensound-music/bensound-christmasmagic.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </div>
     
@@ -857,6 +915,49 @@
         // Update countdown every second
         updateCountdown();
         setInterval(updateCountdown, 1000);
+        
+        // Music Toggle Function with Auto-play
+        let musicPlaying = false;
+        const music = document.getElementById('backgroundMusic');
+        const musicButton = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicText = document.getElementById('musicText');
+        
+        // Set volume to a comfortable level
+        music.volume = 0.25;
+        
+        // Try to auto-play when page loads
+        window.addEventListener('load', function() {
+            music.play().then(() => {
+                // Auto-play successful
+                musicPlaying = true;
+                musicButton.classList.add('playing');
+                musicIcon.textContent = '🎶';
+                musicText.textContent = 'Music Playing';
+            }).catch(() => {
+                // Auto-play blocked by browser, user needs to click
+                musicPlaying = false;
+                musicButton.classList.remove('playing');
+                musicIcon.textContent = '🎵';
+                musicText.textContent = 'Click to Play Music';
+            });
+        });
+        
+        function toggleMusic() {
+            if (musicPlaying) {
+                music.pause();
+                musicButton.classList.remove('playing');
+                musicIcon.textContent = '🎵';
+                musicText.textContent = 'Music Paused';
+                musicPlaying = false;
+            } else {
+                music.play();
+                musicButton.classList.add('playing');
+                musicIcon.textContent = '🎶';
+                musicText.textContent = 'Music Playing';
+                musicPlaying = true;
+            }
+        }
         
         // Share functionality
         function shareInvitation() {
