@@ -220,6 +220,78 @@
             line-height: 1.5;
         }
         
+        /* Birthday Section */
+        .birthday-section {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e9 100%);
+            padding: 35px 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 3px solid #ff69b4;
+            text-align: center;
+        }
+        
+        .birthday-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #c41e3a;
+            font-size: 26px;
+            margin-bottom: 25px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .birthday-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .birthday-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid #ffd1dc;
+        }
+        
+        .birthday-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255, 105, 180, 0.3);
+        }
+        
+        .host-birthday {
+            border: 3px solid #ffd700;
+            background: linear-gradient(135deg, #fffacd 0%, #fff8dc 100%);
+        }
+        
+        .birthday-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .birthday-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #c41e3a;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .birthday-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d5a3d;
+            margin-bottom: 10px;
+        }
+        
+        .birthday-message {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
         /* Highlights */
         .highlights {
             background: linear-gradient(135deg, #fff8e7 0%, #ffe9a0 100%);
@@ -306,138 +378,179 @@
             font-size: 18px;
         }
         
-        /* Comments Section */
-        .comments-section {
-            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
-            padding: 30px 25px;
+        /* Places to Visit Section */
+        .places-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 35px 25px;
             border-radius: 20px;
             margin: 30px 0;
-            border: 2px solid #4a90e2;
+            border: 3px solid #2196f3;
         }
         
-        .comments-section h3 {
+        .places-section h3 {
             font-family: 'Playfair Display', serif;
-            color: #2d5a3d;
-            font-size: 24px;
+            color: #1565c0;
+            font-size: 26px;
             margin-bottom: 10px;
             text-align: center;
         }
         
-        .comments-subtitle {
+        .places-subtitle {
             text-align: center;
-            color: #666;
-            font-size: 14px;
+            color: #555;
+            font-size: 15px;
             margin-bottom: 25px;
-            font-style: italic;
+            font-weight: 400;
         }
         
-        #commentsContainer {
-            max-height: 400px;
-            overflow-y: auto;
-            margin-bottom: 25px;
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
         
-        .comment-item {
+        .place-card {
             background: white;
-            padding: 15px 20px;
-            border-radius: 15px;
+            padding: 25px 20px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid #e3f2fd;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
+            border-color: #2196f3;
+        }
+        
+        .place-icon {
+            font-size: 50px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.3s ease-out;
         }
         
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        
-        .comment-author {
+        .place-name {
+            font-size: 20px;
             font-weight: 700;
-            color: #c41e3a;
-            font-size: 15px;
-        }
-        
-        .comment-time {
-            font-size: 12px;
-            color: #999;
-        }
-        
-        .comment-text {
-            color: #333;
-            line-height: 1.5;
-            font-size: 14px;
-        }
-        
-        .comment-form {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .comment-input,
-        .comment-textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
+            color: #1565c0;
             margin-bottom: 12px;
-            transition: border-color 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.3;
         }
         
-        .comment-input:focus,
-        .comment-textarea:focus {
-            outline: none;
-            border-color: #4a90e2;
+        .place-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            min-height: 60px;
         }
         
-        .comment-textarea {
-            min-height: 80px;
-            resize: vertical;
-        }
-        
-        .comment-button {
-            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 15px;
+        .place-link {
+            display: inline-block;
+            color: #2196f3;
+            text-decoration: none;
             font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+            font-size: 15px;
+            padding: 10px 20px;
+            border: 2px solid #2196f3;
+            border-radius: 25px;
             transition: all 0.3s ease;
         }
         
-        .comment-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+        .place-link:hover {
+            background: #2196f3;
+            color: white;
+            transform: scale(1.05);
         }
         
-        .comment-button:active {
-            transform: translateY(0);
-        }
-        
-        .no-comments {
+        /* WhatsApp Section */
+        .whatsapp-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 30px 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 3px solid #25D366;
             text-align: center;
-            color: #999;
-            padding: 30px;
+        }
+        
+        .whatsapp-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2d5a3d;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        
+        .whatsapp-subtitle {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .whatsapp-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 15px 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 13px;
+            color: #333;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .benefit-emoji {
+            font-size: 28px;
+        }
+        
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .whatsapp-note {
+            color: #666;
+            font-size: 13px;
+            margin-top: 15px;
             font-style: italic;
         }
         
@@ -502,7 +615,7 @@
         <div class="card">
             <div class="header">
                 <div class="emoji-row">🎄 ✨ 🎁 ✨ 🎄</div>
-                <h1>Our Holiday<br>Celebration!</h1>
+                <h1>Dear Patils,<br>Join Our Holiday<br>Celebration!</h1>
                 <p class="subtitle">December 25th - January 1st</p>
             </div>
             
@@ -552,7 +665,7 @@
                     <div class="detail-icon">🎒</div>
                     <div class="detail-content">
                         <div class="detail-label">Departure</div>
-                        <div class="detail-text">Wednesday, January 1st </div>
+                        <div class="detail-text">Wednesday, January 1st</div>
                     </div>
                 </div>
                 
@@ -561,6 +674,24 @@
                     <div class="detail-content">
                         <div class="detail-label">Special Surprise!</div>
                         <div class="detail-text">A magical treasure hunt awaits the little ones! 🗺️✨</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="birthday-section">
+                <h3>🎂 Special Birthday Celebrations! 🎂</h3>
+                <div class="birthday-grid">
+                    <div class="birthday-card">
+                        <div class="birthday-icon">🎉</div>
+                        <div class="birthday-name">Shaina's Birthday</div>
+                        <div class="birthday-date">December 26th</div>
+                        <div class="birthday-message">Let's make her day extra special!</div>
+                    </div>
+                    <div class="birthday-card host-birthday">
+                        <div class="birthday-icon">🎊</div>
+                        <div class="birthday-name">Pratima's Birthday</div>
+                        <div class="birthday-date">December 29th</div>
+                        <div class="birthday-message">Join us in celebrating our host! 🥳</div>
                     </div>
                 </div>
             </div>
@@ -590,7 +721,7 @@
                     </div>
                     <div class="highlight-item">
                         <span class="highlight-emoji">🎁</span>
-                        <div class="highlight-text">Gift Exchange</div>
+                        <div class="highlight-text">Gifts & Surprises</div>
                     </div>
                 </div>
             </div>
@@ -607,26 +738,72 @@
                 </ul>
             </div>
             
-            <!-- Comments Section -->
-            <div class="comments-section">
-                <h3>💬 Guest Messages & Excitement!</h3>
-                <p class="comments-subtitle">Share your thoughts, excitement, or what you're looking forward to!</p>
+            <!-- Places to Visit Section -->
+            <div class="places-section">
+                <h3>📍 Places to Explore Nearby</h3>
+                <p class="places-subtitle">Take a break and explore some amazing local attractions!</p>
                 
-                <div id="commentsContainer">
-                    <!-- Comments will be loaded here -->
+                <div class="places-grid">
+                    <div class="place-card">
+                        <div class="place-icon">🚀</div>
+                        <div class="place-name">Space Center Houston</div>
+                        <div class="place-description">Explore NASA's astronaut training facility and see real spacecraft!</div>
+                        <a href="https://spacecenter.org/" target="_blank" class="place-link">Visit Website →</a>
+                    </div>
+                    
+                    <div class="place-card">
+                        <div class="place-icon">🦁</div>
+                        <div class="place-name">Houston Zoo & Hermann Park</div>
+                        <div class="place-description">Perfect for the kids! See amazing animals and enjoy the beautiful park.</div>
+                        <a href="https://www.houstonzoo.org/" target="_blank" class="place-link">Visit Website →</a>
+                    </div>
+                    
+                    <div class="place-card">
+                        <div class="place-icon">🌺</div>
+                        <div class="place-name">Moody Gardens Galveston</div>
+                        <div class="place-description">Aquarium, rainforest pyramids, and beautiful gardens by the beach!</div>
+                        <a href="https://www.moodygardens.com/" target="_blank" class="place-link">Visit Website →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- WhatsApp Group Section -->
+            <div class="whatsapp-section">
+                <h3>💬 Join Our Family Group Chat!</h3>
+                <p class="whatsapp-subtitle">Connect with us on WhatsApp to share updates, coordinate plans, and build excitement!</p>
+                
+                <div class="whatsapp-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-emoji">📸</span>
+                        <span>Share updates & photos</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-emoji">🚗</span>
+                        <span>Coordinate travel plans</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-emoji">🎉</span>
+                        <span>Build excitement together</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-emoji">❓</span>
+                        <span>Ask any questions</span>
+                    </div>
                 </div>
                 
-                <div class="comment-form">
-                    <input type="text" id="guestName" placeholder="Your Name" class="comment-input">
-                    <textarea id="guestMessage" placeholder="Leave your message here... What are you most excited about? 🎉" class="comment-textarea"></textarea>
-                    <button onclick="postComment()" class="comment-button">Post Message 💬</button>
-                </div>
+               <a href="whatsapp://send" class="whatsapp-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="margin-right: 10px;">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Open WhatsApp
+                </a>
+                
+                <p class="whatsapp-note">Tap to open WhatsApp and message us! 📱</p>
             </div>
             
             <div class="footer">
                 We're beyond excited to host you in our new home!<br>
-                <strong>Get ready for a week of fun, laughter, and unforgettable memories!</strong><br><br>
-                💌 Questions? Text or call us anytime!<br>
+                <strong>Get ready for a week of fun, laughter, and unforgettable memories!</strong>
             </div>
         </div>
     </div>
@@ -680,73 +857,6 @@
         // Update countdown every second
         updateCountdown();
         setInterval(updateCountdown, 1000);
-        
-        // Comments System
-        function loadComments() {
-            const comments = JSON.parse(localStorage.getItem('holidayComments') || '[]');
-            const container = document.getElementById('commentsContainer');
-            
-            if (comments.length === 0) {
-                container.innerHTML = '<div class="no-comments">🎄 Be the first to leave a message! 🎄</div>';
-                return;
-            }
-            
-            container.innerHTML = comments.map(comment => `
-                <div class="comment-item">
-                    <div class="comment-header">
-                        <span class="comment-author">${escapeHtml(comment.name)}</span>
-                        <span class="comment-time">${comment.time}</span>
-                    </div>
-                    <div class="comment-text">${escapeHtml(comment.message)}</div>
-                </div>
-            `).reverse().join('');
-        }
-        
-        function postComment() {
-            const name = document.getElementById('guestName').value.trim();
-            const message = document.getElementById('guestMessage').value.trim();
-            
-            if (!name || !message) {
-                alert('Please fill in both your name and message! 😊');
-                return;
-            }
-            
-            const comments = JSON.parse(localStorage.getItem('holidayComments') || '[]');
-            
-            const newComment = {
-                name: name,
-                message: message,
-                time: new Date().toLocaleDateString('en-US', { 
-                    month: 'short', 
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                }),
-                timestamp: Date.now()
-            };
-            
-            comments.push(newComment);
-            localStorage.setItem('holidayComments', JSON.stringify(comments));
-            
-            // Clear form
-            document.getElementById('guestName').value = '';
-            document.getElementById('guestMessage').value = '';
-            
-            // Reload comments
-            loadComments();
-            
-            // Show success message
-            alert('Your message has been posted! 🎉');
-        }
-        
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-        
-        // Load comments on page load
-        loadComments();
         
         // Share functionality
         function shareInvitation() {
